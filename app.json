@@ -5,7 +5,15 @@
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "ios": {
+      "bundleIdentifier": "com.yourcompany.fabiano",
+      "buildNumber": "1.0.0"
+    },
+    "android": {
+      "package": "com.yourcompany.fabiano",
+      "versionCode": 1
+    }
   },
   "name": "gofinances"
 }
