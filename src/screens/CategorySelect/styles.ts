@@ -1,9 +1,9 @@
 import styled from 'styled-components/native';
 import { Feather} from '@expo/vector-icons';
 import {getStatusBarHeight} from 'react-native-iphone-x-helper'
+import {RFPercentage, RFValue} from 'react-native-responsive-fontsize'
 import { Platform} from 'react-native'
-import { RFValue} from 'react-native-responsive-fontsize'
-
+import { BorderlessButton} from 'react-native-gesture-handler';
 import {GestureHandlerRootView} from 'react-native-gesture-handler'
 import theme from '../../global/styles/theme';
 
@@ -26,9 +26,11 @@ getStatusBarHeight() + RFValue(75) : RFValue(75)}px;
 
 
 
-align-items:center;
-justify-content: flex-end;
-padding-bottom: 19px;
+justify-content:center;
+align-items:flex-start;
+flex-direction: row;
+padding-top: ${Platform.OS == 'ios'?
+getStatusBarHeight() + RFValue(25) : RFValue(25)}px;
 `;
 
 
@@ -36,6 +38,15 @@ export const Title = styled.Text`
 font-family: ${({theme}) => theme.fonts.regular};
 font-size: ${RFValue(18)}px;
 color: ${({theme}) => theme.colors.shape};
+`;
+export const BackButton = styled(BorderlessButton)`
+
+`;
+
+
+export const IconBack = styled(Feather)`
+color: ${({theme}) => theme.colors.secondary};
+font-size: ${RFValue(24)}px;
 `;
 
 export const Category = styled.TouchableOpacity<CategoryProps>`

@@ -40,6 +40,7 @@ import { string } from 'yargs';
       .number()
       .typeError('Informe um valor numerico.')
       .positive('O valor não pode ser negatico.')
+      .required('O Valor é ogrigatorio.'),
 
   });
   

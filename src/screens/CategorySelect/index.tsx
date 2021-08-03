@@ -12,6 +12,8 @@ import {
     Name,
     Separator,
     Footer,
+    BackButton,
+    IconBack
 
   } from './styles';
   
@@ -35,10 +37,23 @@ import {
     function handleCategorySelect(category: Category){
       setCategory(category)
     }
+    function handleLongCategorySelect(){
+      setCategory({
+        key: 'category',
+        name: 'Categoria',
+    })
+  
+    }
+
+    
     return (
         <Container>
             <Header>
-                <Title>Categoria</Title>
+                  <BackButton onPress={closeSelectCategory}> 
+                    <IconBack name="arrow-left"/>
+                  </BackButton>
+
+                  <Title>Categoria</Title>
             </Header>
         
             <FlatList
@@ -48,6 +63,7 @@ import {
               renderItem={({item}) => (
                 <Category
                   onPress={()=> handleCategorySelect(item)}
+                  onLongPress={()=> handleLongCategorySelect()}
                   isActive={category.key === item.key}
                 >
                   <Icon name={item.icon} />

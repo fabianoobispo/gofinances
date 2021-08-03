@@ -14,7 +14,7 @@ background-color: ${({theme}) => theme.colors.background};
 `;
 export const Header = styled.View`
 width:100%;
-height: ${RFPercentage(42)}px;
+height: ${RFPercentage(36)}px;
 
 background-color: ${({theme}) => theme.colors.primary};
 
@@ -104,3 +104,9 @@ export const TransastionsList = styled(
         paddingBottom: getBottomSpace()
     }
 })``;
+
+export const LoadContainer = styled.View`
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+`;
